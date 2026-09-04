@@ -1,0 +1,7 @@
+{
+  "name": "nubelon-b2b-site",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "astro dev", "build": "astro build", "check": "astro check" },
+  "dependencies": { "@astrojs/check": "latest", "astro": "latest", "typescript": "latest" }
+}

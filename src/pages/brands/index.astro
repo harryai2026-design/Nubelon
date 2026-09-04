@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const brands=['ABB','Siemens','Schneider Electric','Hitachi Energy','Eaton','Emerson','Rockwell Automation','Endress+Hauser','Phoenix Contact','Weidmüller','Arteche'];
+---
+<BaseLayout title="Brands | Nubelon Technology">
+  <header class="nav"><div class="wrap nav-inner"><a class="logo" href="/">NUBE<span>LON</span></a><nav class="nav-links"><a href="/products/">Products</a><a href="/services/">Services</a><a href="/brands/">Brands</a><a class="btn" href="/contact/">Request a Quote</a></nav></div></header>
+  <main>
+    <section class="hero"><div class="wrap"><div class="eyebrow">Portfolio brands</div><h1>Technology partners<br/>for industrial work.</h1><p>The brands below are listed from the provided company materials. Authorization, regional supply and product scope will be verified per brand.</p></div></section>
+    <section><div class="wrap"><div class="section-head"><div><div class="eyebrow">Industrial network</div><h2>Built around<br/>real equipment.</h2></div><img class="brand-scene" src="/images/generated/nubelon-middle-east-industry.png" alt="AI concept image of a modern industrial facility" /></div><div class="brands">{brands.map((brand)=><div class="brand"><span>{brand}</span><small>Portfolio listing · verification pending</small></div>)}</div></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>Nubelon Technology (Xiamen) Co., Ltd.</span><span>Brand details will be expanded with verified documents</span><span>nubelon@163.com</span></div></footer>
+</BaseLayout>
+<style>.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}.brand-scene{width:46%;height:210px;object-fit:cover;filter:saturate(.75)}.brand small{display:block;color:var(--muted);font:12px 'DM Sans';margin-top:9px}@media(max-width:760px){.brand-scene{width:100%;margin-top:25px}}</style>

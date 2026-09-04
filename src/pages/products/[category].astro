@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export function getStaticPaths(){
+  return [
+    { category: 'plc-hmi', title: 'PLC and HMI', description: 'Programmable control and industrial visualization requirements.' },
+    { category: 'drives-motion', title: 'Drives and Motion', description: 'Variable frequency drives, motor control and motion applications.' },
+    { category: 'switchgear-protection', title: 'Switchgear and Protection', description: 'Switching, protection and power distribution components.' },
+    { category: 'instrumentation', title: 'Instrumentation and Measurement', description: 'Measurement and analytics equipment for process applications.' }
+  ].map(({ category, title, description }) => ({ params: { category }, props: { title, description } }));
+}
+const { title, description } = Astro.props;
+---
+<BaseLayout title={`${title} | Nubelon Technology`}><header class="nav"><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%"><a class="logo" href="/">NUBE<span>LON</span></a><nav class="nav-links"><a href="/products/">Products</a><a href="/services/">Services</a><a href="/brands/">Brands</a><a class="btn" href="/contact/">Request a Quote</a></nav></div></header><main><section class="hero"><div class="wrap"><div class="eyebrow">Product category</div><h1>{title}</h1><p>{description}</p><a class="btn" href="/contact/">Request product information ↗</a></div></section><section><div class="wrap"><div class="section-head"><div><div class="eyebrow">Catalog status</div><h2>Product data<br/>will follow.</h2></div><p>Models, specifications, documents, availability and regional supply will be added after the product catalog is confirmed.</p></div></div></section></main><footer><div class="wrap footer-row"><span>Nubelon Technology (Xiamen) Co., Ltd.</span><span>{title}</span><span>nubelon@163.com</span></div></footer></BaseLayout>
