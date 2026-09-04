@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const categories = {
-  'plc-hmi': { title: 'PLC and HMI', description: 'Programmable control and industrial visualization requirements.', image: '/Nubelon/images/generated/nubelon-plc-hmi.png', items: ['PLC systems', 'HMI panels', 'Remote I/O and networking'] },
-  'drives-motion': { title: 'Drives and Motion', description: 'Variable frequency drives, motor control and motion applications.', image: '/Nubelon/images/generated/nubelon-control-products.png', items: ['Variable frequency drives', 'Motor starters and control', 'Motion and positioning'] },
-  'switchgear-protection': { title: 'Switchgear and Protection', description: 'Switching, protection and power distribution components.', image: '/Nubelon/images/generated/nubelon-control-products.png', items: ['Circuit protection', 'Contactors and relays', 'Switching and distribution'] },
-  instrumentation: { title: 'Instrumentation and Measurement', description: 'Measurement and analytics equipment for process applications.', image: '/Nubelon/images/generated/nubelon-middle-east-industry.png', items: ['Process measurement', 'Analytical instruments', 'Signals and accessories'] }
-};
-export function getStaticPaths() { return Object.entries(categories).map(([category, data]) => ({ params: { category }, props: data })); }
+export function getStaticPaths() {
+  const categories = {
+    'plc-hmi': { title: 'PLC and HMI', description: 'Programmable control and industrial visualization requirements.', image: '/Nubelon/images/generated/nubelon-plc-hmi.png', items: ['PLC systems', 'HMI panels', 'Remote I/O and networking'] },
+    'drives-motion': { title: 'Drives and Motion', description: 'Variable frequency drives, motor control and motion applications.', image: '/Nubelon/images/generated/nubelon-control-products.png', items: ['Variable frequency drives', 'Motor starters and control', 'Motion and positioning'] },
+    'switchgear-protection': { title: 'Switchgear and Protection', description: 'Switching, protection and power distribution components.', image: '/Nubelon/images/generated/nubelon-control-products.png', items: ['Circuit protection', 'Contactors and relays', 'Switching and distribution'] },
+    instrumentation: { title: 'Instrumentation and Measurement', description: 'Measurement and analytics equipment for process applications.', image: '/Nubelon/images/generated/nubelon-middle-east-industry.png', items: ['Process measurement', 'Analytical instruments', 'Signals and accessories'] }
+  };
+  return Object.entries(categories).map(([category, data]) => ({ params: { category }, props: data }));
+}
 const { title, description, image, items } = Astro.props;
 ---
 <BaseLayout title={`${title} | Nubelon Technology`} description={`${title} for industrial automation projects in the Middle East.`}>
