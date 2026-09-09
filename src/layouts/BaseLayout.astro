@@ -1,5 +1,6 @@
 ---
 import ProductCategoryNav from '../components/ProductCategoryNav.astro';
+import MobileNav from '../components/MobileNav.astro';
 const { title = 'Nubelon Technology | Industrial Automation', description = 'Industrial automation products and engineering support for the Middle East.' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nubeloncontrols.com');
 ---
@@ -14,7 +15,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nubeloncont
     <link rel="icon" type="image/png" href="/images/nubelon-logo-generated.webp" />
     <link rel="apple-touch-icon" href="/images/nubelon-logo-generated.webp" />
   </head>
-  <body><slot /><ProductCategoryNav /><script is:inline type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Nubelon Technology (Xiamen) Co., Ltd.","url":"https://nubeloncontrols.com/","logo":"https://nubeloncontrols.com/images/nubelon-logo-generated.webp","email":"sales@nubeloncontrols.com","telephone":"+86 13051108770","address":{"@type":"PostalAddress","streetAddress":"Room 2001, No. 1, Xixi Shanwei Road, Software Park Phase III","addressLocality":"Xiamen","addressRegion":"Fujian","addressCountry":"CN"},"areaServed":["AE","SA","QA","OM","KW","BH"]})} /></body>
+  <body><slot /><ProductCategoryNav /><MobileNav /><script is:inline type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Nubelon Technology (Xiamen) Co., Ltd.","url":"https://nubeloncontrols.com/","logo":"https://nubeloncontrols.com/images/nubelon-logo-generated.webp","email":"sales@nubeloncontrols.com","telephone":"+86 13051108770","address":{"@type":"PostalAddress","streetAddress":"Room 2001, No. 1, Xixi Shanwei Road, Software Park Phase III","addressLocality":"Xiamen","addressRegion":"Fujian","addressCountry":"CN"},"areaServed":["AE","SA","QA","OM","KW","BH"]})} /></body>
 </html>
 <style is:global>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -35,4 +36,6 @@ body:has(.display-title) .brands .brand{display:none}
 body:has(.brand-scene) .brands{display:block;background:#fff url('/images/nubelon-business-scope-brands.webp') center/contain no-repeat;min-height:390px;border:1px solid var(--line)}
 body:has(.brand-scene) .brands .brand{display:none}
 .product-category-nav{background:#111c24;color:#fff;border-bottom:1px solid #31404b}.product-category-nav .wrap{display:flex;gap:22px;align-items:center;min-height:44px;overflow:auto;white-space:nowrap}.product-category-nav span{color:#b8c4cc;font-size:12px;text-transform:uppercase;letter-spacing:.12em}.product-category-nav a{font-size:13px;color:#fff}.product-category-nav a:hover{color:#ff9aa4}
+.mobile-nav{display:none}
+@media(max-width:760px){body{padding-bottom:72px}.mobile-nav{position:fixed;display:flex;left:12px;right:12px;bottom:12px;z-index:50;justify-content:space-around;background:rgba(11,17,23,.96);border:1px solid #31404b;border-radius:14px;box-shadow:0 10px 30px rgba(11,17,23,.25);padding:8px 4px env(safe-area-inset-bottom)}.mobile-nav a{display:flex!important;flex:1;flex-direction:column;align-items:center;gap:3px;color:#b8c4cc;font-size:11px}.mobile-nav a span{font-size:19px;line-height:20px;color:#fff}.mobile-nav a small{font-size:11px}.mobile-nav .mobile-nav-cta{color:#ff9aa4}.mobile-nav .mobile-nav-cta span{color:var(--red)} }
 </style>
