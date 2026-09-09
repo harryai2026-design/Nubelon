@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harryai2026-design.github.io/Nubelon/sitemap.xml

@@ -9,12 +9,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nubelon.com
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
     <title>{title}</title><meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:image" content="https://nubelon.com/images/nubelon-logo-generated.webp" />
+    <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:image" content="https://harryai2026-design.github.io/Nubelon/images/generated/nubelon-hero-control-room.webp" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content="https://harryai2026-design.github.io/Nubelon/images/generated/nubelon-hero-control-room.webp" />
     <meta name="theme-color" content="#0b1117" />
     <link rel="icon" type="image/png" href="/Nubelon/images/nubelon-logo-generated.webp" />
     <link rel="apple-touch-icon" href="/Nubelon/images/nubelon-logo-generated.webp" />
   </head>
-  <body><slot /><ProductCategoryNav /></body>
+  <body><slot /><ProductCategoryNav /><script is:inline type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Nubelon Technology (Xiamen) Co., Ltd.","url":"https://harryai2026-design.github.io/Nubelon/","logo":"https://harryai2026-design.github.io/Nubelon/images/nubelon-logo-generated.webp","email":"nubelon@163.com","telephone":"+86 13051108770","address":{"@type":"PostalAddress","streetAddress":"Room 2001, No. 1, Xixi Shanwei Road, Software Park Phase III","addressLocality":"Xiamen","addressRegion":"Fujian","addressCountry":"CN"},"areaServed":["AE","SA","QA","OM","KW","BH"]})} /></body>
 </html>
 <style is:global>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
