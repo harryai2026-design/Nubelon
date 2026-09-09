@@ -1,4 +1,5 @@
 ---
+import ProductCategoryNav from '../components/ProductCategoryNav.astro';
 const { title = 'Nubelon Technology | Industrial Automation', description = 'Industrial automation products and engineering support for the Middle East.' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nubelon.com');
 ---
@@ -13,7 +14,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nubelon.com
     <link rel="icon" type="image/png" href="/Nubelon/images/nubelon-logo-generated.webp" />
     <link rel="apple-touch-icon" href="/Nubelon/images/nubelon-logo-generated.webp" />
   </head>
-  <body><slot /></body>
+  <body><slot /><ProductCategoryNav /></body>
 </html>
 <style is:global>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -33,4 +34,5 @@ body:has(.display-title) .brands{background-image:url('/Nubelon/images/nubelon-b
 body:has(.display-title) .brands .brand{display:none}
 body:has(.brand-scene) .brands{display:block;background:#fff url('/Nubelon/images/nubelon-business-scope-brands.webp') center/contain no-repeat;min-height:390px;border:1px solid var(--line)}
 body:has(.brand-scene) .brands .brand{display:none}
+.product-category-nav{background:#111c24;color:#fff;border-bottom:1px solid #31404b}.product-category-nav .wrap{display:flex;gap:22px;align-items:center;min-height:44px;overflow:auto;white-space:nowrap}.product-category-nav span{color:#b8c4cc;font-size:12px;text-transform:uppercase;letter-spacing:.12em}.product-category-nav a{font-size:13px;color:#fff}.product-category-nav a:hover{color:#ff9aa4}
 </style>
